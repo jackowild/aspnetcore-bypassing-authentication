@@ -20,6 +20,13 @@ namespace MockingAuthApi
         {
             services.AddMvc();
 
+            this.ConfigureAuth(services);
+            
+            services.AddScoped<IPersonRepository, PersonRepository>();
+        }
+
+        protected virtual void ConfigureAuth(IServiceCollection services)
+        {
             string domain = $"https://{Configuration["Auth0:Domain"]}/";
             services.AddAuthentication(options =>
             {
@@ -31,8 +38,6 @@ namespace MockingAuthApi
                 options.Authority = domain;
                 options.Audience = Configuration["Auth0:ApiIdentifier"];
             });
-
-            services.AddScoped<IPersonRepository, PersonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
