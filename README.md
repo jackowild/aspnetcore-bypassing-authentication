@@ -1,2 +1,2 @@
-# aspnetcore-mocking-authorization
-An example of how to mock authorization for integration tests in an ASP.NET Core 2.0 app
+# aspnetcore-bypassing-authorization
+An example of how to bypass authentication in ASP.NET Core 2.0 integration tests.
