@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace MockingAuthApi.Repositories
 {
-    public interface IPersonRepository
+    protected interface IPersonRepository
     {
         Task AddPerson(PersonModel person);
     }
