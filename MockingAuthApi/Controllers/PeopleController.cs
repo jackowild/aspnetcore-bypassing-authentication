@@ -20,7 +20,7 @@
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]PersonModel personModel)
         {
-            try
+           try
             {
                 if (!ModelState.IsValid) return this.BadRequest();
 
